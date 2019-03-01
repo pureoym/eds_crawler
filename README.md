@@ -1,5 +1,7 @@
 # 说明文档
 
+![scpray系统流程图](https://github.com/pureoym/eds_crawler/blob/master/scrapy_pic.png)
+
 ## 部署与运行
 ### 部署配置
 服务器：10.10.0.133  
