@@ -35,24 +35,22 @@ phantomjs
 
 ## 部署与运行
 ### 部署配置
-服务器：10.10.0.133  
+服务器： 10.10.
 日志路径：/data0/search/eds_crawler/logs/  
 
 ### 部署流程
-1 执行脚本下载代码：sh bin/script/publish_eds_crawler.sh  
+1 sh bin/script/publish_eds_crawler.sh  
 2 创建日志路径：/data0/search/eds_crawler/logs/  
 3 执行一次或周期执行
 
 ### 服务器上执行一次
-执行启动命令: sh /application/search/eds_crawler/start.sh  
-注意如果是win环境编写脚本，需要执行如下命令  
+sh /application/search/eds_crawler/start.sh  
 vi /application/search/eds_crawler/start.sh
 :set ff=unix  
 
 ### 服务器上周期执行
-在服务器上执行命令“crantab -e”  
-将crantab_shell上的内容粘贴  
-如果需要查看日志，执行命令“cat /var/spool/mail/search”
+crantab -e  
+查看日志 cat /var/spool/mail/search
   
 ## 环境搭建
 ### selenium  
@@ -62,9 +60,8 @@ pip install selenium
 
 ### phantomjs
 ```commandline
-cd tmp
+cd /applcation/search
 wget 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2'
-mv phantomjs-2.1.1-linux-x86_64.tar.bz2 /application/search
 tar -jxvf phantomjs-2.1.1-linux-x86_64.tar.bz2
 mv phantomjs-2.1.1-linux-x86_64 phantomjs
 ```
@@ -91,15 +88,12 @@ win:
 python  
 ```python
 from selenium import webdriver  
+from selenium import webdriver  
 # d = webdriver.Chrome() 
-d=webdriver.PhantomJS('/application/search/phantomjs') 
+d=webdriver.PhantomJS('/application/search/phantomjs/bin/phantomjs') 
 d.get('https://www.baidu.com')  
 print(d.title) 
 d.find_element_by_xpath('//*[@id="u1"]/a[1]').click()
 print(d.title) 
 d.quit()
 ```
-
-## 代码与文档
-代码地址：http://svn.chinaso365.com/svn/ai/src/eds/eds_crawler  
-说明文档：http://confluence.chinaso365.com/pages/viewpage.action?pageId=48779740
