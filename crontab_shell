@@ -1,0 +1,2 @@
+*/5 * * * * sh /application/search/eds_crawler/start_weibo_job.sh
+0 9 * * * sh /application/search/eds_crawler/start_login_job.sh
