@@ -2,6 +2,35 @@
 
 ![scpray系统流程图](https://github.com/pureoym/eds_crawler/blob/master/scrapy_pic.png)
 
+## 运行需求
+python 3.6  
+scrapy  
+pymysql
+redis  
+twisted  
+DBUtils  
+selenium  
+phantomjs  
+
+## 业务逻辑
+### 微博爬虫  
+1 执行策略：每5分钟执行一次，每次爬取至上次爬取最新条目，至多爬取12页  
+2 超时时间：290秒    
+3 请求时间间隔：3秒  
+4 执行方式：阻塞式单线程  
+5 执行逻辑：  
+启动爬虫，中间件获取cookie；  
+判断是否需要爬取下一页；  
+爬取本页微博列表，根据需要爬取子页面；    
+
+### cookie爬虫  
+1 执行策略：每天执行，根据更新时间与超时时间判断是否过期，如果过期则爬取新cookie并更新  
+2 更新超时时间：15天  
+3 执行逻辑：  
+进入未登录列表页，点击登录；    
+进入登录页，输入用户名密码，点击登录；    
+进入登录后列表页，获取cookie； 
+
 ## 部署与运行
 ### 部署配置
 服务器：10.10.0.133  
@@ -22,36 +51,7 @@ vi /application/search/eds_crawler/start.sh
 在服务器上执行命令“crantab -e”  
 将crantab_shell上的内容粘贴  
 如果需要查看日志，执行命令“cat /var/spool/mail/search”
-
-## 业务逻辑
-### 微博爬虫  
-1 执行策略：每5分钟执行一次，每次爬取至上次爬取最新条目，至多爬取12页  
-2 超时时间：290秒    
-3 请求时间间隔：3秒  
-4 执行方式：阻塞式单线程  
-5 执行逻辑：  
-启动爬虫，中间件获取cookie；  
-判断是否需要爬取下一页；  
-爬取本页微博列表，根据需要爬取子页面；    
-
-### cookie爬虫  
-1 执行策略：每天执行，根据更新时间与超时时间判断是否过期，如果过期则爬取新cookie并更新  
-2 更新超时时间：15天  
-3 执行逻辑：  
-进入未登录列表页，点击登录；    
-进入登录页，输入用户名密码，点击登录；    
-进入登录后列表页，获取cookie；   
-
-## 运行需求
-python 3.6  
-scrapy  
-pymysql
-redis  
-twisted  
-DBUtils  
-selenium  
-phantomjs  
-
+  
 ## 环境搭建
 ### selenium  
 ```commandline
