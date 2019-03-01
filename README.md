@@ -85,7 +85,6 @@ win:
 3 将chromedrive.exe拷贝至python安装路径  
 
 ### 验证
-python  
 ```python
 from selenium import webdriver  
 from selenium import webdriver  
