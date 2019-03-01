@@ -45,7 +45,7 @@ phantomjs
 
 ### 服务器上执行一次
 sh /application/search/eds_crawler/start.sh  
-vi /application/search/eds_crawler/start.sh
+vi /application/search/eds_crawler/start.sh  
 :set ff=unix  
 
 ### 服务器上周期执行
