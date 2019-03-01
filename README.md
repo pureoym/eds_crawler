@@ -5,7 +5,7 @@
 ## 运行需求
 python 3.6  
 scrapy  
-pymysql
+pymysql  
 redis    
 twisted  
 DBUtils  
