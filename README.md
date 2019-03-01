@@ -6,7 +6,7 @@
 python 3.6  
 scrapy  
 pymysql
-redis  
+redis    
 twisted  
 DBUtils  
 selenium  
