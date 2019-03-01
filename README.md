@@ -22,8 +22,7 @@ vi /application/search/eds_crawler/start.sh
 如果需要查看日志，执行命令“cat /var/spool/mail/search”
 
 ## 业务逻辑
-### 爬虫配置
-#### 微博爬虫  
+### 微博爬虫  
 1 执行策略：每5分钟执行一次，每次爬取至上次爬取最新条目，至多爬取12页  
 2 超时时间：290秒    
 3 请求时间间隔：3秒  
@@ -33,7 +32,7 @@ vi /application/search/eds_crawler/start.sh
 判断是否需要爬取下一页；  
 爬取本页微博列表，根据需要爬取子页面；    
 
-#### cookie爬虫  
+### cookie爬虫  
 1 执行策略：每天执行，根据更新时间与超时时间判断是否过期，如果过期则爬取新cookie并更新  
 2 更新超时时间：15天  
 3 执行逻辑：  
