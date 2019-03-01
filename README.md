@@ -85,8 +85,7 @@ win:
 3 将chromedrive.exe拷贝至python安装路径  
 
 ### 验证
-```python
-from selenium import webdriver  
+```python  
 from selenium import webdriver  
 # d = webdriver.Chrome() 
 d=webdriver.PhantomJS('/application/search/phantomjs/bin/phantomjs') 
