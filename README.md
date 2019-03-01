@@ -53,6 +53,11 @@ crantab -e
 查看日志 cat /var/spool/mail/search
   
 ## 环境搭建
+### scrapy
+```commandline
+pip install scrapy  
+```
+
 ### selenium  
 ```commandline
 pip install selenium  
