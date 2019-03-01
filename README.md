@@ -35,7 +35,7 @@ phantomjs
 
 ## 部署与运行
 ### 部署配置
-服务器： 10.10.
+服务器： 10.10.   
 日志路径：/data0/search/eds_crawler/logs/  
 
 ### 部署流程
