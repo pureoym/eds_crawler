@@ -37,9 +37,9 @@ vi /application/search/eds_crawler/start.sh
 1 执行策略：每天执行，根据更新时间与超时时间判断是否过期，如果过期则爬取新cookie并更新  
 2 更新超时时间：15天  
 3 执行逻辑：  
-从页面https://weibo.cn/pub/中进入，点击登录；    
-进入页面https://passport.weibo.cn/signin/login，输入用户名密码，点击登录；    
-进入页面https://weibo.cn，获取cookie   
+进入未登录列表页，点击登录；    
+进入登录页，输入用户名密码，点击登录；    
+进入登录后列表页，获取cookie；   
 
 ## 运行需求
 python 3.6  
